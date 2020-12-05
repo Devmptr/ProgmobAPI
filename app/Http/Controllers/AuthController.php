@@ -23,8 +23,8 @@ class AuthController extends Controller
         }
 
         $admin = Admin::where([
-            'username', '=', $request->username,
-            'password', '=', $request->password
+            ['username', '=', $request->username],
+            ['password', '=', $request->password]
         ])->first();
         
         if(isset($admin)){
