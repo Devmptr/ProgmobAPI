@@ -15,17 +15,8 @@ class LapakController extends Controller
         return response()->json(['lapak' => $lapak ], 200);
     }
 
-    public function searchLapak(Request $request){
-        $validator = Validator::make($request->all(), [
-            'search' => 'required',
-        ]);
-
-        // Return Response kalau gagal validasi
-        if($validator->fails()){
-            return response()->json(['error' => $validator->errors()], 401);
-        }
-
-        $lapak = Lapak::where('nama_lapak', 'LIKE', '%'.$request->search.'%')->get();
+    public function searchLapak($search){
+        $lapak = Lapak::where('nama_lapak', 'LIKE', '%'.$search.'%')->get();
 
         if(count($lapak) > 0){
             return response()->json([
