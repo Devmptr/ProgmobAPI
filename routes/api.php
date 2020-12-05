@@ -18,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('loginAdmin', 'AuthController@loginAdmin');
+Route::post('loginAdmin', 'AuthController@loginAdmin');
 
 Route::get('getKategoriIuran', 'PembayaranController@getKategoriIuran');
 
-Route::get('getLapak', 'LapakController@allLapak');
+Route::get('lapak/search/', 'LapakController@allLapak');
 
-Route::post('lapak/search', 'LapakController@searchLapak');
+Route::get('lapak/search/{search}', 'LapakController@searchLapak');
 
 Route::get('lapak/view/{id}', 'LapakController@viewLapak');
