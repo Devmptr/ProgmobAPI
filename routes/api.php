@@ -22,6 +22,10 @@ Route::post('loginAdmin', 'AuthController@loginAdmin');
 
 Route::get('getKategoriIuran', 'PembayaranController@getKategoriIuran');
 
+Route::post('getDataKategori','PembayaranController@getDataKategori');
+
+Route::post("bayarIuran",'PembayaranController@bayarIuran');
+
 Route::get('lapak/search/', 'LapakController@allLapak');
 
 Route::get('lapak/search/{search}', 'LapakController@searchLapak');
