@@ -31,7 +31,9 @@ class PembayaranController extends Controller
             'periode_iuran'=>$request->periode_iuran,
             'id_kategori_iuran'=>$request->id_kategori_iuran,
             'nilai'=>$request->periode_iuran*$kategoriiuran->nilai,
-            'id_pegawai'=>1,
+            'id_pegawai'=>$request->id_pegawai,
+            'id_manager'=>0,
+            'tanggal_penyerahan' => now()
         ]);
         return response()->json(["message"=>"success"],200);
     }

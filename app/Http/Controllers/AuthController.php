@@ -28,7 +28,7 @@ class AuthController extends Controller
         ])->first();
         
         if(isset($admin)){
-            return response()->json(['success' => 'success'], 200);
+            return response()->json(['success' => 'success', 'id' => $admin->id_admin], 200);
         }else{
             return response()->json(['error' => 'unauthorized'], 401);
         }

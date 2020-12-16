@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class KategoriIuran extends Model
 {
     //
+    public $timestamps = false;
     protected $table = 'kategori_iuran';
 
     protected $fillable = [
@@ -16,4 +17,5 @@ class KategoriIuran extends Model
     public function pembayaranIuran(){
         return $this->hasMany(PembayaranIuran::class, 'id_kategori_iuran');
     }
+
 }

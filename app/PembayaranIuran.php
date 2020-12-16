@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class PembayaranIuran extends Model
 {
     //
+    public $timestamps = false;
+
     protected $table = 'pembayaran_iuran';
 
     protected $fillable = [
         'id_lapak', 'id_kategori_iuran', 'id_pegawai', 'id_manager',
-        'tanggal_bayar', 'tanggal_iuran', 'periode_iuran',  'nilai',
+        'tanggal_bayar', 'tanggal_iuran', 'periode_iuran',  'nilai', 'tanggal_penyerahan'
     ];
 
     public function lapak(){
