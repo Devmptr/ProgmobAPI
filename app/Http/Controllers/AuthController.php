@@ -26,9 +26,9 @@ class AuthController extends Controller
             ['username', '=', $request->username],
             ['password', '=', $request->password]
         ])->first();
-        
+
         if(isset($admin)){
-            return response()->json(['success' => 'success', 'id' => $admin->id_admin], 200);
+            return response()->json(['success' => 'success', 'id_pegawai'=>$admin->id_pegawai], 200);
         }else{
             return response()->json(['error' => 'unauthorized'], 401);
         }
